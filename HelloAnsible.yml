@@ -32,7 +32,7 @@
 #Variable declaration at play vars level
 - name: Play with external vars file
   hosts: all
-  vars.files:
+  vars_files:
     - exvars.yml
   tasks:
     - name: print URL
