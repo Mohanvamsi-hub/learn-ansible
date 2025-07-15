@@ -4,3 +4,16 @@
     - name: Print Hello World
       ansible.builtin.debug:
         msg: Hello World
+
+
+
+#Variable declaration at play level
+
+- name: Play level varibale
+  hosts: all
+  vars:
+    URL: play.example.com
+  tasks:
+      - name: print URL
+        ansible.builtin.debug:
+          msg: variable - {{ URL }}
