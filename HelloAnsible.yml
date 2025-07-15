@@ -27,3 +27,24 @@
   vars:
     URL: task.example.com
 
+
+
+#Variable declaration at task level
+- name: Play level variable
+  hosts: all
+  vars.files:
+    -exvars.yml
+  tasks:
+    - name: print URL
+      ansible.builtin.debug:
+        msg: variable - {{ URL }}
+
+
+
+
+
+
+
+
+
+
