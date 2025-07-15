@@ -8,7 +8,6 @@
 
 
 #Variable declaration at play level
-
 - name: Play level varibale
   hosts: all
   vars:
@@ -17,3 +16,14 @@
       - name: print URL
         ansible.builtin.debug:
           msg: variable - {{ URL }}
+
+#Variable declaration at task level
+- name: Task level varibale
+  hosts: all
+  tasks:
+    - name: print URL
+      ansible.builtin.debug:
+        msg: variable - {{ URL }}
+  vars:
+    URL: task.example.com
+
